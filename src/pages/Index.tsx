@@ -4,6 +4,7 @@ import { GenreFilter } from "@/components/GenreFilter";
 import { BookCard } from "@/components/BookCard";
 import { booksData } from "@/data/books";
 import { BookOpen } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const [selectedGenre, setSelectedGenre] = useState("All");
@@ -27,23 +28,23 @@ const Index = () => {
     <div className="min-h-screen">
       <header className="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <BookOpen className="h-6 w-6 text-primary" />
             <span className="text-xl font-bold">BookDiscover</span>
-          </div>
+          </Link>
           <nav className="hidden md:flex gap-6">
-            <a href="#" className="text-sm hover:text-primary transition-smooth">
+            <Link to="/" className="text-sm text-primary font-medium">
               Home
-            </a>
-            <a href="#" className="text-sm hover:text-primary transition-smooth">
+            </Link>
+            <Link to="/bestsellers" className="text-sm hover:text-primary transition-smooth">
               Bestsellers
-            </a>
-            <a href="#" className="text-sm hover:text-primary transition-smooth">
+            </Link>
+            <Link to="/new-releases" className="text-sm hover:text-primary transition-smooth">
               New Releases
-            </a>
-            <a href="#" className="text-sm hover:text-primary transition-smooth">
+            </Link>
+            <Link to="/about" className="text-sm hover:text-primary transition-smooth">
               About
-            </a>
+            </Link>
           </nav>
         </div>
       </header>
